@@ -1,5 +1,15 @@
 import { AppProps } from 'next/app';
-import { RecoilRoot } from 'recoil';
+import { RecoilRoot, useRecoilValue } from 'recoil';
+import todoState from '@/atoms/todoState';
+import { useEffect } from 'react';
+
+const AppInit = () => {
+  const todoList = useRecoilValue(todoState);
+
+  useEffect(() => {
+
+  })
+}
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

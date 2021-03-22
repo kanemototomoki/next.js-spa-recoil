@@ -4,14 +4,15 @@ import todoState from '@/atoms/todoState';
 
 const Content = () => {
   const router = useRouter();
-  console.log(router)
+  const index = Number(router.query.id) - 1;
   const todoList = useRecoilValue(todoState);
-  const todo = todoList[0];
+  const todo = todoList[index];
+  console.log(todo)
 
   return (
     <>
       <p>{todo.title}</p>
-      <p>{todo.content}</p>
+      {todo.content && <p>{todo.content}</p>}
     </>
   );
 }
